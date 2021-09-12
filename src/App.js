@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Aside from "./components/Aside";
+import profileimg from "./images/image-jeremy.png"
+import Data from "./components/Data";
+import { useState } from "react";
 
+document.title = "Time tracking dashboard"
 function App() {
+  const [time, setTime] = useState("weekly")
+  function toggleTime(time) {
+    setTime(time)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="container" >
+      <div className="dashboard">
+        <Aside toggleTime={toggleTime} profileimg={profileimg} />
+        <Data time={time} />
+      </div>
+      <div className="attribution">
+        Coded by <a className="link" href="https://www.instagram.com/vishal_brdr">Vishal Biradar</a>
+      </div>
+    </main>
   );
 }
 

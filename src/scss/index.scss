@@ -1,0 +1,229 @@
+// ### Primary
+
+$Blue: hsl(246, 80%, 60%);
+
+$bg-card-1: hsl(15, 100%, 70%);
+$bg-card-2: hsl(195, 74%, 62%);
+$bg-card-3: hsl(348, 100%, 68%);
+$bg-card-4: hsl(145, 58%, 55%);
+$bg-card-5: hsl(264, 64%, 52%);
+$bg-card-6: hsl(43, 84%, 65%);
+
+// ### Neutral
+
+$bg-body: hsl(226, 43%, 10%);
+$bg-card: hsl(235, 46%, 20%);
+$bg-card--hover: hsl(235, 45%, 61%);
+$color-info: hsl(236, 100%, 87%);
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.8rem;
+  background: $bg-body;
+  min-height: 100vh;
+  font-family: "Rubik", sans-serif;
+  color: white;
+  padding-block: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 75vw;
+  max-width: 130rem;
+  display: grid;
+  grid-gap: 4rem;
+  align-items: center;
+  @media screen and (max-width: 1250px) {
+    width: 90vw;
+  }
+}
+.link {
+  color: $color-info;
+  text-decoration: none;
+  font-weight: 300;
+  &.active {
+    color: white;
+    font-weight: normal;
+  }
+  &:hover {
+    color: white;
+  }
+}
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  width: 100%;
+  grid-gap: 3rem;
+  @media screen and (max-width: 1150px) {
+    grid-template-columns: 1fr;
+  }
+}
+.aside {
+  background-color: $bg-card;
+  border-radius: 2rem;
+  @media screen and (max-width: 1150px) {
+    max-height: 25rem;
+  }
+
+  li {
+    list-style: none;
+  }
+  .profile-card {
+    background-color: $Blue;
+    border-radius: inherit;
+    padding: 3rem;
+    padding-bottom: 10rem;
+    @media screen and (max-width: 1150px) {
+      padding-bottom: 3rem;
+      display: flex;
+      align-items: center;
+    }
+    .profile-pic {
+      width: 9rem;
+      border-radius: 50%;
+      padding: 0.3rem;
+      img {
+        border: 3px solid white;
+        border-radius: inherit;
+        width: 100%;
+      }
+    }
+    .heading {
+      display: grid;
+      color: $color-info;
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-top: 4rem;
+      width: min-content;
+      .name {
+        font-size: 4rem;
+        font-weight: 300;
+        color: white;
+      }
+      @media screen and (max-width: 1150px) {
+        margin-top: 0;
+        width: max-content;
+        margin-left: 2rem;
+      }
+      @media screen and (max-width: 1250px) {
+        .name {
+          font-size: 2.5rem;
+        }
+      }
+      @media screen and (max-width: 450px) {
+        .name {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+  .nav__links {
+    padding: 3rem;
+    display: grid;
+    grid-gap: 1.5rem;
+    @media screen and (max-width: 1150px) {
+      grid-auto-flow: column;
+      justify-content: start;
+    }
+    @media screen and (max-width: 550px) {
+      justify-content: space-around;
+    }
+  }
+}
+.data {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  //   grid-template-rows: repeat(2, 1fr);
+  height: 100%;
+  grid-gap: 3rem;
+  @media screen and (max-width: 1150px) {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-auto-rows: 20rem;
+  }
+  .card {
+    border-radius: 2rem;
+    background-repeat: no-repeat !important;
+    background-position: 90% top !important;
+    display: flex;
+    align-items: flex-end;
+    &-1 {
+      background: url(./images/icon-work.svg), $bg-card-1;
+    }
+    &-2 {
+      background: url(./images/icon-play.svg), $bg-card-2;
+    }
+    &-3 {
+      background: url(./images/icon-study.svg), $bg-card-3;
+    }
+    &-4 {
+      background: url(./images/icon-exercise.svg), $bg-card-4;
+    }
+    &-5 {
+      background: url(./images/icon-social.svg), $bg-card-5;
+    }
+    &-6 {
+      background: url(./images/icon-self-care.svg), $bg-card-6;
+    }
+
+    &-data {
+      background-color: $bg-card;
+      border-radius: 1.7rem;
+      width: 100%;
+      padding: 3rem;
+      height: 80%;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $bg-card--hover;
+      }
+      .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .title {
+          font-size: 1.8rem;
+          font-weight: 500;
+          color: white;
+        }
+      }
+      .hours {
+        display: grid;
+        margin-top: 2rem;
+        grid-gap: 1rem;
+        @media screen and (max-width: 1150px) {
+          grid-auto-flow: column;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+      .current-hrs {
+        font-size: 5rem;
+        font-weight: 300;
+        @media screen and (max-width: 550px) {
+          font-size: 3rem;
+        }
+      }
+      .previous-hrs {
+        font-weight: normal;
+        color: $color-info;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+.attribution {
+  text-align: center;
+  font-weight: 300;
+}
