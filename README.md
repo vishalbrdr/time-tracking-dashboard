@@ -47,7 +47,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
 - Frontend Mentor - [@vishalbrdr](https://www.frontendmentor.io/profile/vishalbrdr)
 - Instagram - [@vishal_brdr](https://www.instagram.com/vishal_brdr)
 
